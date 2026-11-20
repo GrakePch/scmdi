@@ -1,0 +1,16 @@
+.license-sections { margin-top: 8px; }
+.license-section { padding-block: 16px; border-bottom: 1px solid var(--md-sys-color-outline-variant); }
+.license-section:last-child { padding-bottom: 0; border-bottom: 0; }
+.license-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.license-section h3 { margin: 0; font-size: 14px; font-weight: 600; }
+.license-section p { margin: 8px 0 0; color: var(--md-sys-color-on-surface-variant); font-size: 12px; line-height: 1.8; }
+.license-section a { color: var(--md-sys-color-primary); font-size: 11px; }
+.license-section a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.license-section a svg { vertical-align: -2px; }
+.license-section .license-badge { display: inline-flex; align-items: center; gap: 4px; padding: 4px 8px; border-radius: 8px; background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); white-space: nowrap; }
+.license-dependencies { display: grid; gap: 8px; margin: 12px 0 0; }
+.license-dependencies > div { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: 12px; }
+.license-dependencies dt { color: var(--md-sys-color-on-surface-variant); font-size: 12px; line-height: 1.7; overflow-wrap: anywhere; }
+.license-dependencies dd { margin: 0; white-space: nowrap; }
+.license-community-links { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 12px; }
+.license-community-links a { font-size: 11px; }

@@ -1,0 +1,53 @@
+.code-surface.copyable-code { position: relative; }
+
+/* Leave a permanent text gutter: scrolling code never passes under the action. */
+.copyable-code .code-block { padding-top: 18px; padding-right: 64px; }
+
+/* Keep the action's hit target clear of the native scrollbar gutter. */
+.copyable-code .code-copy-action { position: absolute; top: 6px; right: 18px; }
+
+.copyable-code .code-copy-button {
+  --container-height: 48px;
+  --container-shape: 12px;
+  --leading-space: 0;
+  --trailing-space: 0;
+  width: 48px;
+  min-width: 48px;
+}
+
+.export-actions { display: flex; gap: 2px; margin-top: 16px; }
+.export-actions .material-button {
+  --container-height: 56px;
+  --container-shape: 8px;
+  min-height: 48px;
+  min-width: 48px;
+  font-size: 14px;
+  letter-spacing: 0;
+}
+.export-actions .export-download {
+  flex: 1;
+  --leading-space: 16px;
+  --trailing-space: 16px;
+  border-start-start-radius: 28px;
+  border-end-start-radius: 28px;
+}
+.export-actions .export-action-png { flex: 0 0 auto; }
+.export-actions .export-png {
+  --leading-space: 12px;
+  --trailing-space: 12px;
+  border-start-end-radius: 28px;
+  border-end-end-radius: 28px;
+}
+.export-actions .export-short-label { display: none; }
+.export-actions .material-button:active { border-radius: 12px; }
+.export-actions .material-button:focus-visible,
+.copyable-code .code-copy-button:focus-visible { outline: 2px solid var(--md-sys-color-primary); outline-offset: -4px; }
+
+@media (max-width: 380px) {
+  .export-actions .export-full-label { display: none; }
+  .export-actions .export-short-label { display: inline; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .export-actions .material-button { transition: none; }
+}

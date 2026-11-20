@@ -1,0 +1,35 @@
+.detail-preview.icon-preview {
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-primary);
+  transition: background-color .2s, color .2s;
+}
+
+.detail-preview.icon-preview[data-custom-color="true"] {
+  background: color-mix(in oklab, var(--preview-selected-color) 20%, white);
+  color: var(--preview-selected-color);
+}
+
+:root[data-theme="dark"] .detail-preview.icon-preview[data-custom-color="true"] {
+  background: color-mix(in oklab, var(--preview-selected-color) 42%, var(--md-sys-color-surface));
+}
+
+/* Luminous colors need a dark tint; near-black needs a light tint in dark mode. */
+:root .detail-preview.icon-preview[data-color-tone="light"] {
+  background: color-mix(in oklab, var(--preview-selected-color) 35%, #201c26);
+}
+:root[data-theme="dark"] .detail-preview.icon-preview[data-color-tone="dark"] {
+  background: color-mix(in oklab, var(--preview-selected-color) 20%, #d4cbdc);
+}
+
+.preview-controls { gap: 8px; }
+.preview-controls .swatches { gap: 8px; min-width: 0; flex-wrap: wrap; }
+.preview-controls .swatch { flex-shrink: 0; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--md-sys-color-outline) 55%, transparent); }
+.preview-controls .custom-color, .preview-controls output { flex-shrink: 0; }
+
+@media (max-width: 380px) {
+  .preview-controls .swatches { gap: 4px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .detail-preview.icon-preview { transition: none; }
+}

@@ -1,0 +1,47 @@
+/* Connected M3 Expressive buttons, using Material Web's native-button utility
+   and ripple. Selection remains React-controlled radio state. */
+.density-control {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 2px;
+}
+
+.density-control .density-segment {
+  --container-height: 48px;
+  --container-shape: 6px;
+  --leading-space: 14px;
+  --trailing-space: 14px;
+  min-width: 48px;
+}
+
+.density-control .density-segment:first-child {
+  border-start-start-radius: 24px;
+  border-end-start-radius: 24px;
+}
+
+.density-control .density-segment:last-child {
+  border-start-end-radius: 24px;
+  border-end-end-radius: 24px;
+}
+
+.density-control .density-segment[aria-checked="true"] {
+  --container-color: var(--md-sys-color-primary);
+  --icon-color: var(--md-sys-color-on-primary);
+  --label-text-color: var(--md-sys-color-on-primary);
+  border-radius: 16px;
+}
+
+.density-control .density-segment:active {
+  border-radius: 10px;
+}
+
+.density-control .density-segment:focus-visible {
+  z-index: 1;
+  outline: 3px solid var(--md-sys-color-primary);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .density-control .density-segment { transition: none; }
+}

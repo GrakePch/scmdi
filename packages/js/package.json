@@ -1,0 +1,36 @@
+{
+  "name": "@grakepch/scmdi",
+  "version": "0.1.0",
+  "description": "Star Citizen SVG icon paths compatible with @mdi/react, with source attribution and modification notices.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/index.js",
+    "dist/index.cjs",
+    "dist/index.d.ts",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "scripts": {
+    "prepack": "node ../../scripts/build-package.mjs",
+    "prepublishOnly": "node ../../scripts/validate.mjs --release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrakePch/scmdi.git",
+    "directory": "packages/js"
+  }
+}

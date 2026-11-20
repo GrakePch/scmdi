@@ -1,0 +1,37 @@
+{
+  "name": "scmdi-workspace",
+  "private": true,
+  "version": "0.1.0-draft.0",
+  "type": "module",
+  "workspaces": [
+    "packages/js"
+  ],
+  "scripts": {
+    "dev": "node scripts/catalog-notices.mjs && vite --config apps/catalog/vite.config.ts --host 127.0.0.1",
+    "build": "npm run build:package && npm run build:catalog",
+    "build:package": "node scripts/build-package.mjs",
+    "build:catalog": "node scripts/catalog-notices.mjs && vite build --config apps/catalog/vite.config.ts",
+    "check": "tsc --noEmit && node scripts/validate.mjs",
+    "check:release": "node scripts/validate.mjs --release",
+    "test": "node --test tests/*.test.mjs",
+    "review:apply": "node scripts/apply-review.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/fira-code": "5.3.0",
+    "@fontsource-variable/google-sans": "5.3.2",
+    "@fontsource-variable/noto-sans-sc": "5.3.1",
+    "@lit/react": "1.0.8",
+    "@material/web": "2.5.0",
+    "@mdi/js": "7.4.47",
+    "@mdi/react": "1.6.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.18",
+    "@types/react-dom": "18.3.5",
+    "@vitejs/plugin-react": "4.3.4",
+    "typescript": "5.6.2",
+    "vite": "6.4.6"
+  }
+}

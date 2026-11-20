@@ -1,0 +1,17 @@
+node_modules/
+dist/
+*.tgz
+/.agents/
+/.playwright-cli/
+/AGENTS.md
+.npmrc
+npm-token*.txt
+*.log
+*.pem
+*.key
+*.p12
+*.pfx
+.env*
+!.env.example
+apps/catalog/public/favicon.svg
+apps/catalog/public/THIRD_PARTY_NOTICES.txt
