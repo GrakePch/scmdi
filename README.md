@@ -1,23 +1,14 @@
 # SCMDI
 
-Star Citizen Material Design Icons：为 Star Citizen 场景整理的 SVG 图标库，兼容 `@mdi/react`。
+English · [简体中文](README.zh-CN.md) · [npm package](https://www.npmjs.com/package/@grakepch/scmdi)
 
-SCMDI 是独立社区项目，与 Cloud Imperium、Google、Pictogrammers 无隶属或背书关系。
+Star Citizen Material Design Icons (SCMDI) is a collection of SVG icon paths for Star Citizen controls and actions. Use the paths with `@mdi/react` or render them directly in an SVG with a `0 0 24 24` viewBox.
 
-## 功能
+## Use an icon
 
-- 按中英文名称、用途和游戏动作 ID 搜索。
-- 按原创、MDI 原图、MDI 改绘和游戏素材筛选；多来源图标可出现在多个分类中。
-- 三档网格密度，紧凑视图只显示图标。
-- 调整预览颜色和尺寸，复制 React、Path 或 SVG 使用代码。
-- 下载 SVG 或透明背景 PNG；PNG 使用当前预览尺寸和颜色。
-- 中英界面、深浅色主题、桌面详情面板和移动端弹窗。
+For React, install the path package and renderer together.
 
-## 使用路径包
-
-在 React 项目中安装路径包和 `@mdi/react`。
-
-```bash
+```sh
 npm install @grakepch/scmdi @mdi/react
 ```
 
@@ -28,29 +19,37 @@ import { scmdiBrake } from '@grakepch/scmdi';
 <Icon path={scmdiBrake} size={1} />;
 ```
 
-主入口导出 SVG path 字符串，无运行时依赖，提供 ESM、CommonJS 和 TypeScript 声明。逐图标署名和修改声明附在路径常量旁，完整图标信息可在网站目录查看。
+`@grakepch/scmdi` exports SVG path strings as named ESM and CommonJS exports, includes TypeScript declarations, and has no runtime dependencies. Each path export carries its applicable attribution and modification notices.
 
-## 本地开发
+## Browse the catalog
 
-需要 Node.js 22.12+ 与 npm。
+- Search by English or Chinese name, purpose, or in-game action ID.
+- Filter by source to find original designs, unchanged Material Design Icons (MDI), MDI adaptations, or icons based on game assets. An icon can match more than one source.
+- Choose from three grid sizes. The smallest shows just the icons.
+- Set the preview color and size, copy a React example, SVG path, or SVG markup, or download an SVG or transparent PNG. PNG exports use the preview dimensions and color.
+- Switch between English and Chinese or light and dark themes. Select an icon to open its details in a desktop panel or a mobile dialog.
 
-```bash
-npm install
+## Local development
+
+Use Node.js 22.12 or later and npm. From the repository root, run:
+
+```sh
+npm ci
 npm run dev
 ```
 
-访问终端显示的地址，默认是 `http://127.0.0.1:4186`。网站使用 React、TypeScript、Vite 和 Material Web。界面字体为 Google Sans、Noto Sans SC，代码字体为 Fira Code。
+Open the URL printed by Vite. The default is `http://127.0.0.1:4186`. The catalog uses React, TypeScript, Vite, and Material Web, with Google Sans and Noto Sans SC for the interface and Fira Code for code samples.
 
-```bash
+```sh
 npm run check
 npm test
 npm run build
 ```
 
-应用代码位于 `apps/catalog/`，图标源数据位于 `icons/catalog.json`，路径包位于 `packages/js/`。维护者使用 `npm run check:release` 校验发布条件。
+The catalog app lives in `apps/catalog/`, the icon data in `icons/catalog.json`, and the npm package in `packages/js/`. Run `npm run check:release` to validate the icon records before publishing.
 
-## 许可与署名
+## License and attribution
 
-SCMDI 项目代码及图标采用 [Apache-2.0](LICENSE)，保留各自来源、版权及修改声明。网站依赖和字体保留各自的许可证，详见 [完整许可与署名](THIRD_PARTY_NOTICES.md)。图标详情提供相应的来源记录。
+SCMDI code and catalog icons are licensed under Apache 2.0. The catalog lists the sources for each icon. Dependencies and fonts retain their own licenses. See the [license](LICENSE) and [third-party notices](THIRD_PARTY_NOTICES.md).
 
-本项目许可不改变 Star Citizen 原始游戏素材及商标的上游权利。
+SCMDI is an independent community project, unaffiliated with and without endorsement from Cloud Imperium, Google, or Pictogrammers. Rights to the original Star Citizen game assets and trademarks remain with their respective owners.
